@@ -1,10 +1,14 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
+require('dotenv').config()
+
+const UI_REMOTE_PATH = process.env.REACT_APP_UI_REMOTE_PATH
+
 const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:4001/",
+    publicPath: `${UI_REMOTE_PATH}/`,
   },
 
   resolve: {
