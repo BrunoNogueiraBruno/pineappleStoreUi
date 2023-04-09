@@ -1,29 +1,18 @@
 import React from 'react'
 import { SButton } from './styles'
-
-interface ButtonProps {
-    primary?: boolean
-    backgroundColor?: string
-    size?: 'small' | 'medium' | 'large'
-    children: string
-    onClick?: () => void
-}
+import { Close } from '@material-ui/icons'
+import { ButtonProps } from './types'
 
 const Button = ({
-    primary = false,
-    size = 'medium',
-    backgroundColor,
+    close = false,
+    width = 'small',
+    styleType = 'default',
     children,
-    ...props
 }: ButtonProps) => {
-    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
+
     return (
-        <SButton
-            type="button"
-            className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-            style={{ backgroundColor }}
-            {...props}
-        >
+        <SButton width={width} styleType={styleType}>
+            {close && <Close />}
             {children}
         </SButton>
     )

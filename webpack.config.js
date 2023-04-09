@@ -8,6 +8,10 @@ module.exports = (_, argv) => ({
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+
+  optimization: {
+    concatenateModules: true
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
   },

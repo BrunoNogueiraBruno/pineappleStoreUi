@@ -1,11 +1,33 @@
 import styled from 'styled-components'
-import { colorTheme } from '../../styles/globalStyles'
+import { styleTypeTemplate, xBoxShadow, xDefault, xFlexBox } from '../../styles/globalStyles'
+import { ButtonStyleProps } from './types'
 
-export const SButton = styled.button`
-    background: ${colorTheme.gray};
-    color: ${colorTheme.darkGray};
-    height: 25px;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+const widthTemplate = {
+    small: '30px',
+    medium: '60px',
+    large: '120px'
+} as { [index: string]: string }
+
+export const SButton = styled.button<ButtonStyleProps>`
+    ${xDefault}
+    ${xFlexBox}
+    ${xBoxShadow}
+    
     border: none;
+    border-radius: 4px;
+    height: 25px;
+
+    ${({ width }) => {
+        if (width) return `padding: 20px ${widthTemplate[width]};`
+        return 'padding: 20px 16px;'
+    }};
+
+    ${({ styleType }) => {
+        const { background, color } = styleTypeTemplate[styleType]
+
+        return `
+            background: ${background};
+            color: ${color};
+        `
+    }};
 `
