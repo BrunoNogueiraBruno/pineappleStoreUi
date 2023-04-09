@@ -1,18 +1,23 @@
 import { css } from 'styled-components'
 
 export const colorTheme = {
-    gray: '#eeeeee',
     darkGray: '#929292',
 
-    details: '#3560cf',
+    primarydetails: '#3560cf',
+    secondaryDetails: '#929292',
+
     primaryBg: '#FFFFFF',
-    secondaryBg: '#D9D9D9'
+    secondaryBg: '#D9D9D9',
+    terciaryBg: '#eeeeee',
+
+    primaryText: '#41483C'
 }
 
 export const xBoxShadow = 'box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);'
+export const xBoxShadow2 = 'box-shadow: 0 3px 8px rgba(0,0,0,0.45);'
 export const xDefault = css`
     font-family: Roboto, cursive;
-    font-size: .4em;
+    font-size: 1.3em;
 `
 
 export const xFlexBox = css`
@@ -23,11 +28,11 @@ export const xFlexBox = css`
 
 export const styleTypeTemplate = {
     default: {
-        background: colorTheme.gray,
-        color: colorTheme.darkGray,
+        background: colorTheme.terciaryBg,
+        color: colorTheme.primaryText,
     },
     primary: {
-        background: colorTheme.details,
+        background: colorTheme.primarydetails,
         color: colorTheme.primaryBg
     }
 } as {

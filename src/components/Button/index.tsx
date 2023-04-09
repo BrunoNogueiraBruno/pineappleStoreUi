@@ -3,12 +3,13 @@ import { SButton } from './styles'
 import { Close } from '@material-ui/icons'
 import { ButtonProps } from './types'
 
-const Button = ({
-    close = false,
-    width = 'small',
-    styleType = 'default',
-    children,
-}: ButtonProps) => {
+const Button = (props: ButtonProps) => {
+    const {
+        close = false,
+        width = 'small',
+        styleType = 'default',
+        children,
+    } = props
 
     return (
         <SButton width={width} styleType={styleType}>
