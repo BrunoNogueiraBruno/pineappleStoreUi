@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { MultiSelectorStyleProps } from './types'
-import { colorTheme, xBoxShadow, xBoxShadow2, xFlexBox } from '../../styles/globalStyles'
+import { colorTheme, xBoxShadow, xBoxShadow2, xFlexBox, xHover } from '../../styles/globalStyles'
 
 export const SMultiSelector = styled.div`
     ${xFlexBox}
@@ -29,12 +29,7 @@ const selectedStyles = css`
 export const SelectorItem = styled.button<MultiSelectorStyleProps>`
     ${xFlexBox}
     ${xBoxShadow}
-
-:hover {
-    ${xBoxShadow2}
-    
-    filter: brightness(.95);
-}
+    ${xHover}
 
     flex-direction: column;
     justify-content: space-between;

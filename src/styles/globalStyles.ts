@@ -19,6 +19,13 @@ export const xDefault = css`
     font-family: Roboto, cursive;
     font-size: 1.3em;
 `
+export const xHover = css`
+    :hover {
+        ${xBoxShadow2}
+        
+        filter: brightness(.95);
+    }
+`
 
 export const xFlexBox = css`
     display: flex;
